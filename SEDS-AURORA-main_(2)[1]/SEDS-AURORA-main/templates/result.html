@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f0f0; margin: 0; padding: 0; }
+        header { background-color: #333; color: white; padding: 15px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        main { padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Prediction Results</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about_us">About Us</a>
+            <a href="/contact">Contact</a>
+            <a href="/prediction">Prediction</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Detected Seismic Events</h2>
+        <textarea rows="10" cols="50">{{ csv_data }}</textarea>
+        <br>
+        <a href="/download_csv?csv_data={{ csv_data }}">Download CSV</a>
+        <h3>STA/LTA Plot</h3>
+        <img src="data:image/png;base64,{{ figure }}">
+    </main>
+</body>
+</html>
